@@ -13,7 +13,8 @@ tailwind.config = {
     extend: {
       colors: {
         matte: '#0A0A0A',
-        electric: '#FF4F00'
+        electric: '#FF4F00',
+        whatsapp: '#25D366'
       }
     }
   }
@@ -45,7 +46,7 @@ body {
 .grain {
   pointer-events: none;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  opacity: 0.08;
+  opacity: 0.05;
 }
 
 /* Hero text reveal */
@@ -115,21 +116,25 @@ body {
 
   <div class="relative z-10 text-center px-6">
     <h1 id="heroTitle"
-        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12">
+        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase">
       Ravishing Soul
     </h1>
-
-    <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
-     🚧 DEAR CUSTOMER WEBSITE IS UNDER CONSTRUCTION🚧
-      CLICK THE BUTTON TO ORDER VIA WHATSAPP
-    </p>
-
-    <a href="https://wa.me/917396491027"
-       target="_blank"
-       class="inline-flex items-center gap-3 bg-electric text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-       Private Order via WhatsApp
-    </a>
   </div>
+</section>
+
+<!-- ================= ORDER NOTICE ================= -->
+<section class="py-24 text-center px-6 fade-section">
+  <p class="uppercase tracking-widest text-xs text-white/60 mb-10">
+    🚧 Dear Customer — Website is Under Construction 🚧<br>
+    Please place your order privately via WhatsApp
+  </p>
+
+  <a href="https://wa.me/917396491027"
+     target="_blank"
+     class="inline-flex items-center justify-center gap-3 bg-whatsapp text-black px-14 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+     <i class="fa-brands fa-whatsapp text-base"></i>
+     Private Order via WhatsApp
+  </a>
 </section>
 
 <!-- ================= COLLECTION ================= -->
@@ -174,7 +179,7 @@ body {
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/917396491027"
 target="_blank"
-class="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition hover:scale-105">
+class="fixed bottom-6 right-6 z-50 bg-whatsapp w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition hover:scale-105">
 <i class="fa-brands fa-whatsapp text-3xl text-black"></i>
 </a>
 
@@ -194,11 +199,9 @@ sections.forEach(sec => observer.observe(sec));
 const heroTitle = document.getElementById("heroTitle");
 window.addEventListener("scroll", () => {
   const y = window.scrollY;
-  heroTitle.style.opacity = Math.max(0, 1 - y / 300);
+  heroTitle.style.opacity = Math.max(0, 1 - y / 400);
 });
 </script>
 
 </body>
 </html>
-
-
