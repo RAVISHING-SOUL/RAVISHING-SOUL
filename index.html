@@ -13,7 +13,6 @@ tailwind.config = {
     extend: {
       colors: {
         matte: '#0A0A0A',
-        electric: '#FF4F00',
         whatsapp: '#25D366'
       }
     }
@@ -55,10 +54,11 @@ body {
   letter-spacing: 0.05em;
   animation: luxuryReveal 1.6s ease-out forwards;
 }
+
 @keyframes luxuryReveal {
   to {
     opacity: 1;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.22em;
   }
 }
 
@@ -66,6 +66,7 @@ body {
 .hero-video {
   animation: slowZoom 18s ease-in-out infinite alternate;
 }
+
 @keyframes slowZoom {
   from { transform: scale(1); }
   to { transform: scale(1.08); }
@@ -77,6 +78,7 @@ body {
   transform: translateY(24px);
   transition: all 1.2s ease;
 }
+
 .fade-section.visible {
   opacity: 1;
   transform: translateY(0);
@@ -104,7 +106,7 @@ body {
 </nav>
 
 <!-- ================= HERO ================= -->
-<section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
+<section class="relative min-h-[100svh] flex items-start justify-center pt-32 sm:pt-40 md:pt-48 overflow-hidden">
 
   <video autoplay muted loop playsinline
     class="absolute inset-0 w-full h-full object-cover hero-video">
@@ -114,61 +116,64 @@ body {
   <div class="absolute inset-0 hero-vignette"></div>
   <div class="absolute inset-0 grain"></div>
 
-  <div class="relative z-10 text-center px-6">
+  <div class="relative z-10 text-center px-6 w-full">
+
+    <!-- BRAND TITLE -->
     <h1 id="heroTitle"
-        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase">
+        class="hero-title text-3xl sm:text-5xl md:text-6xl uppercase">
       Ravishing Soul
     </h1>
+
+    <!-- CTA BLOCK -->
+    <div class="mt-16 sm:mt-24 md:mt-32 text-center fade-section">
+      <p class="uppercase tracking-widest text-xs text-white/65 mb-10">
+        🚧 Dear Customer — Website is Under Construction 🚧<br>
+        Please place your order privately via WhatsApp
+      </p>
+
+      <a href="https://wa.me/917396491027"
+         target="_blank"
+         class="inline-flex items-center justify-center gap-3 bg-whatsapp text-black px-10 sm:px-14 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+        <i class="fa-brands fa-whatsapp"></i>
+        Private Order via WhatsApp
+      </a>
+    </div>
+
   </div>
-</section>
-
-<!-- ================= ORDER NOTICE ================= -->
-<section class="py-24 text-center px-6 fade-section">
-  <p class="uppercase tracking-widest text-xs text-white/60 mb-10">
-    🚧 Dear Customer — Website is Under Construction 🚧<br>
-    Please place your order privately via WhatsApp
-  </p>
-
-  <a href="https://wa.me/917396491027"
-     target="_blank"
-     class="inline-flex items-center justify-center gap-3 bg-whatsapp text-black px-14 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-     <i class="fa-brands fa-whatsapp text-base"></i>
-     Private Order via WhatsApp
-  </a>
 </section>
 
 <!-- ================= COLLECTION ================= -->
 <section id="collection" class="max-w-7xl mx-auto px-6 py-32 fade-section">
-<h2 class="uppercase tracking-widest mb-16 text-lg">The Collection</h2>
+  <h2 class="uppercase tracking-widest mb-16 text-lg">The Collection</h2>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
 
-<div>
-<img src="images/lucky.jpg" class="w-full max-h-[360px] object-contain mb-6">
-<h3 class="uppercase tracking-widest">No.01 — Lucky</h3>
-<p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
-</div>
+    <div>
+      <img src="images/lucky.jpg" class="w-full max-h-[360px] object-contain mb-6">
+      <h3 class="uppercase tracking-widest">No.01 — Lucky</h3>
+      <p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
+    </div>
 
-<div>
-<img src="images/aven.jpg" class="w-full max-h-[360px] object-contain mb-6">
-<h3 class="uppercase tracking-widest">No.02 — Aven</h3>
-<p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
-</div>
+    <div>
+      <img src="images/aven.jpg" class="w-full max-h-[360px] object-contain mb-6">
+      <h3 class="uppercase tracking-widest">No.02 — Aven</h3>
+      <p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
+    </div>
 
-<div>
-<img src="images/wanted.jpg" class="w-full max-h-[360px] object-contain mb-6">
-<h3 class="uppercase tracking-widest">No.03 — Wanted</h3>
-<p class="text-white/60 mt-2 text-sm">Leather · Smoke · Spice</p>
-</div>
+    <div>
+      <img src="images/wanted.jpg" class="w-full max-h-[360px] object-contain mb-6">
+      <h3 class="uppercase tracking-widest">No.03 — Wanted</h3>
+      <p class="text-white/60 mt-2 text-sm">Leather · Smoke · Spice</p>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <!-- ================= QUOTE ================= -->
 <section id="philosophy" class="py-40 text-center px-6 fade-section">
-<blockquote class="text-3xl sm:text-4xl md:text-5xl italic leading-tight">
-  “Scent is memory made visible.”
-</blockquote>
+  <blockquote class="text-3xl sm:text-4xl md:text-5xl italic leading-tight">
+    “Scent is memory made visible.”
+  </blockquote>
 </section>
 
 <!-- ================= FOOTER ================= -->
