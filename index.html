@@ -45,13 +45,13 @@ body { font-family: "Times New Roman", Times, serif; }
 /* Hero title refined */
 .hero-title {
   opacity: 0;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   animation: luxuryReveal 1.6s ease-out forwards;
 }
 @keyframes luxuryReveal {
   to {
     opacity: 1;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
   }
 }
 
@@ -102,6 +102,7 @@ body { font-family: "Times New Roman", Times, serif; }
 
 <!-- ================= HERO ================= -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
+
   <video autoplay muted loop playsinline
     class="absolute inset-0 w-full h-full object-cover hero-video">
     <source src="videos/hero.mp4" type="video/mp4">
@@ -110,11 +111,14 @@ body { font-family: "Times New Roman", Times, serif; }
   <div class="absolute inset-0 hero-vignette"></div>
   <div class="absolute inset-0 grain"></div>
 
-  <div class="relative z-10 text-center px-6">
-    <!-- CLEAN BRAND NAME -->
+  <!-- CENTERED CONTENT -->
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-[100svh]">
+    
+    <!-- TWO-LINE CENTERED BRAND -->
     <h1 id="heroTitle"
-        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 text-center">
-      Ravishing Soul
+        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase leading-[1.1] text-center mb-12">
+      <span class="block">Ravishing</span>
+      <span class="block">Soul</span>
     </h1>
 
     <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
