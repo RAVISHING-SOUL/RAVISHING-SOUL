@@ -48,16 +48,16 @@ body {
   opacity: 0.08;
 }
 
-/* Hero text reveal */
+/* Hero text reveal (UPDATED SPACING) */
 .hero-title {
   opacity: 0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   animation: luxuryReveal 1.6s ease-out forwards;
 }
 @keyframes luxuryReveal {
   to {
     opacity: 1;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.18em;
   }
 }
 
@@ -80,6 +80,28 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Product Image Slider */
+.product-slider {
+  position: relative;
+}
+.product-slider img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.slider-btn.left { left: 8px; }
+.slider-btn.right { right: 8px; }
 </style>
 </head>
 
@@ -114,25 +136,22 @@ body {
   <div class="absolute inset-0 grain"></div>
 
   <div class="relative z-10 text-center px-6">
+    <!-- UPDATED TITLE WITH ™ -->
     <h1 id="heroTitle"
-        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12">
+        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 relative inline-block">
       Ravishing Soul
+      <span class="absolute -top-2 -right-4 text-xs">™</span>
     </h1>
 
     <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
-      HEY DEAR CUSTOMER WEBSITE IS UNDER CUNSTRUCTION SO PLEASE 
-      
-      CLICK THE BUTTON BELOW FOR MORE EXITING OFFERS AND TO THE PLACE ORDER 
-
-
-      Scroll to explore 
+      HEY DEAR CUSTOMER WEBSITE IS UNDER CONSTRUCTION                   
+                           SO PLEASE CLICK THE BUTTON BELOW FOR MORE EXITING OFFERS AND TO THE PLACE ORDER                 SCROLL TO EXPLORE
     </p>
 
-    <!-- UPDATED BUTTON COLOR -->
     <a href="https://wa.me/917396491027"
        target="_blank"
-       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest  transition hover:bg-white">
-       ORDER Privately On WhatsApp 🩶
+       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+       order privately on whatsapp
     </a>
   </div>
 </section>
@@ -143,22 +162,74 @@ body {
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
 
+<!-- 1. Wanted -->
 <div>
-<img src="images/lucky.jpg" class="w-full max-h-[360px] object-contain mb-6">
-<h3 class="uppercase tracking-widest">No.01 — Lucky</h3>
-<p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
+<div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg">
+  <img src="images/wanted/1.jpg">
 </div>
-
-<div>
-<img src="images/aven.jpg" class="w-full max-h-[360px] object-contain mb-6">
-<h3 class="uppercase tracking-widest">No.02 — Aven</h3>
-<p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
-</div>
-
-<div>
-<img src="images/wanted.jpg" class="w-full max-h-[360px] object-contain mb-6">
-<h3 class="uppercase tracking-widest">No.03 — Wanted</h3>
+<h3 class="uppercase tracking-widest">No.01 — Wanted</h3>
 <p class="text-white/60 mt-2 text-sm">Leather · Smoke · Spice</p>
+<p class="mt-3 text-sm tracking-widest">
+  <span class="line-through text-white/40 mr-2">₹1299</span>
+  <span class="text-white font-semibold">₹599</span>
+  <span class="ml-2 text-[#25D366]">54% OFF</span>
+</p>
+</div>
+
+<!-- 2. Opium -->
+<div>
+<div class="product-slider mb-6" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg">
+  <img src="images/opium/1.jpg">
+</div>
+<h3 class="uppercase tracking-widest">No.02 — Opium</h3>
+<p class="text-white/60 mt-2 text-sm">Spice · Amber · Dark Woods</p>
+<p class="mt-3 text-sm tracking-widest">
+  <span class="line-through text-white/40 mr-2">₹1299</span>
+  <span class="text-white font-semibold">₹599</span>
+  <span class="ml-2 text-[#25D366]">54% OFF</span>
+</p>
+</div>
+
+<!-- 3. Pretty -->
+<div>
+<div class="product-slider mb-6" data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg">
+  <img src="images/pretty/1.jpg">
+</div>
+<h3 class="uppercase tracking-widest">No.03 — Pretty</h3>
+<p class="text-white/60 mt-2 text-sm">Floral · Soft Musk · Vanilla</p>
+<p class="mt-3 text-sm tracking-widest">
+  <span class="line-through text-white/40 mr-2">₹1299</span>
+  <span class="text-white font-semibold">₹599</span>
+  <span class="ml-2 text-[#25D366]">54% OFF</span>
+</p>
+</div>
+
+<!-- 4. Aven -->
+<div>
+<div class="product-slider mb-6" data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg">
+  <img src="images/aven/1.jpg">
+</div>
+<h3 class="uppercase tracking-widest">No.04 — Aven</h3>
+<p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
+<p class="mt-3 text-sm tracking-widest">
+  <span class="line-through text-white/40 mr-2">₹1299</span>
+  <span class="text-white font-semibold">₹599</span>
+  <span class="ml-2 text-[#25D366]">54% OFF</span>
+</p>
+</div>
+
+<!-- 5. Lucky -->
+<div>
+<div class="product-slider mb-6" data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg">
+  <img src="images/lucky/1.jpg">
+</div>
+<h3 class="uppercase tracking-widest">No.05 — Lucky</h3>
+<p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
+<p class="mt-3 text-sm tracking-widest">
+  <span class="line-through text-white/40 mr-2">₹1299</span>
+  <span class="text-white font-semibold">₹599</span>
+  <span class="ml-2 text-[#25D366]">54% OFF</span>
+</p>
 </div>
 
 </div>
@@ -173,7 +244,7 @@ body {
 
 <!-- ================= FOOTER ================= -->
 <footer class="border-t border-white/10 py-16 text-center text-white/50 text-xs tracking-widest">
-© 2026 RAVISHING SOUL — Crafted & Curated with Care
+©️ 2026 RAVISHING SOUL — Crafted & Curated with Care
 </footer>
 
 <!-- FLOATING WHATSAPP -->
@@ -201,9 +272,19 @@ window.addEventListener("scroll", () => {
   const y = window.scrollY;
   heroTitle.style.opacity = Math.max(0, 1 - y / 300);
 });
+
+/* ================= AUTO SLIDE FOR ALL PERFUMES ================= */
+document.querySelectorAll(".product-slider").forEach(slider => {
+  const img = slider.querySelector("img");
+  const images = slider.dataset.images.split(",");
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }, 2500);
+});
 </script>
 
 </body>
 </html>
-
-
