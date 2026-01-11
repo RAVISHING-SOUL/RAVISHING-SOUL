@@ -13,7 +13,8 @@ tailwind.config = {
     extend: {
       colors: {
         matte: '#0A0A0A',
-        electric: '#FF4F00'
+        electric: '#FF4F00',
+        orderblue: '#7dd3fc'
       }
     }
   }
@@ -35,9 +36,9 @@ body {
 .hero-vignette {
   background: radial-gradient(
     ellipse at center,
-    rgba(0,0,0,0.35) 0%,
-    rgba(0,0,0,0.75) 70%,
-    rgba(0,0,0,0.9) 100%
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.45) 70%,
+    rgba(0,0,0,0.65) 100%
   );
 }
 
@@ -45,10 +46,10 @@ body {
 .grain {
   pointer-events: none;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  opacity: 0.08;
+  opacity: 0.04;
 }
 
-/* Hero text reveal (UPDATED SPACING) */
+/* Hero text reveal */
 .hero-title {
   opacity: 0;
   letter-spacing: 0.03em;
@@ -61,9 +62,10 @@ body {
   }
 }
 
-/* Video slow zoom */
+/* Video clarity enhancement */
 .hero-video {
   animation: slowZoom 18s ease-in-out infinite alternate;
+  filter: brightness(1.15) contrast(1.15) saturate(1.1);
 }
 @keyframes slowZoom {
   from { transform: scale(1); }
@@ -90,18 +92,6 @@ body {
   max-height: 360px;
   object-fit: contain;
 }
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 14px;
-}
-.slider-btn.left { left: 8px; }
-.slider-btn.right { right: 8px; }
 </style>
 </head>
 
@@ -136,22 +126,21 @@ body {
   <div class="absolute inset-0 grain"></div>
 
   <div class="relative z-10 text-center px-6">
-    <!-- UPDATED TITLE WITH ™ -->
+    <!-- BRAND NAME WITH ™ -->
     <h1 id="heroTitle"
-        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 relative inline-block">
+        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 inline-flex items-start">
       Ravishing Soul
-      <span class="absolute -top-2 -right-4 text-xs">™</span>
+      <sup class="ml-1 text-xs relative -top-2">™</sup>
     </h1>
 
     <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
-      HEY DEAR CUSTOMER WEBSITE IS UNDER CONSTRUCTION                   
-                           SO PLEASE CLICK THE BUTTON BELOW FOR MORE OFFERS AND TO THE PLACE ORDER                 SCROLL TO EXPLORE
+      An olfactory expression of modern elegance
     </p>
 
     <a href="https://wa.me/917396491027"
        target="_blank"
        class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-       order privately on whatsapp
+       Private Order via WhatsApp
     </a>
   </div>
 </section>
@@ -164,7 +153,7 @@ body {
 
 <!-- 1. Wanted -->
 <div>
-<div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg">
+<div class="product-slider mb-6">
   <img src="images/wanted/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.01 — Wanted</h3>
@@ -174,11 +163,17 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
+
+<a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Wanted%20-%20https://ravishing-soul.github.io/#collection"
+   target="_blank"
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   <i class="fa-solid fa-cart-shopping"></i> Order Now
+</a>
 </div>
 
 <!-- 2. Opium -->
 <div>
-<div class="product-slider mb-6" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg">
+<div class="product-slider mb-6">
   <img src="images/opium/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.02 — Opium</h3>
@@ -188,11 +183,17 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
+
+<a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Opium%20-%20https://ravishing-soul.github.io/#collection"
+   target="_blank"
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   <i class="fa-solid fa-cart-shopping"></i> Order Now
+</a>
 </div>
 
 <!-- 3. Pretty -->
 <div>
-<div class="product-slider mb-6" data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg">
+<div class="product-slider mb-6">
   <img src="images/pretty/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.03 — Pretty</h3>
@@ -202,11 +203,17 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
+
+<a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Pretty%20-%20https://ravishing-soul.github.io/#collection"
+   target="_blank"
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   <i class="fa-solid fa-cart-shopping"></i> Order Now
+</a>
 </div>
 
 <!-- 4. Aven -->
 <div>
-<div class="product-slider mb-6" data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg">
+<div class="product-slider mb-6">
   <img src="images/aven/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.04 — Aven</h3>
@@ -216,11 +223,17 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
+
+<a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Aven%20-%20https://ravishing-soul.github.io/#collection"
+   target="_blank"
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   <i class="fa-solid fa-cart-shopping"></i> Order Now
+</a>
 </div>
 
 <!-- 5. Lucky -->
 <div>
-<div class="product-slider mb-6" data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg">
+<div class="product-slider mb-6">
   <img src="images/lucky/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.05 — Lucky</h3>
@@ -230,16 +243,15 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
+
+<a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Lucky%20-%20https://ravishing-soul.github.io/#collection"
+   target="_blank"
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   <i class="fa-solid fa-cart-shopping"></i> Order Now
+</a>
 </div>
 
 </div>
-</section>
-
-<!-- ================= QUOTE ================= -->
-<section id="philosophy" class="py-40 text-center px-6 fade-section">
-<blockquote class="text-3xl sm:text-4xl md:text-5xl italic leading-tight">
-  “Scent is memory made visible.”
-</blockquote>
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -254,38 +266,5 @@ class="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex item
 <i class="fa-brands fa-whatsapp text-3xl text-black"></i>
 </a>
 
-<!-- ================= JS ================= -->
-<script>
-/* Fade sections on scroll */
-const sections = document.querySelectorAll('.fade-section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-},{ threshold: 0.2 });
-
-sections.forEach(sec => observer.observe(sec));
-
-/* Hero text fade on scroll */
-const heroTitle = document.getElementById("heroTitle");
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  heroTitle.style.opacity = Math.max(0, 1 - y / 300);
-});
-
-/* ================= AUTO SLIDE FOR ALL PERFUMES ================= */
-document.querySelectorAll(".product-slider").forEach(slider => {
-  const img = slider.querySelector("img");
-  const images = slider.dataset.images.split(",");
-  let index = 0;
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    img.src = images[index];
-  }, 2500);
-});
-</script>
-
 </body>
 </html>
-
