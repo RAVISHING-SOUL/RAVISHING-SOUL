@@ -13,7 +13,6 @@ tailwind.config = {
     extend: {
       colors: {
         matte: '#0A0A0A',
-        electric: '#FF4F00',
         orderblue: '#7dd3fc'
       }
     }
@@ -25,14 +24,10 @@ tailwind.config = {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-/* ================= GLOBAL ================= */
 html { scroll-behavior: smooth; }
+body { font-family: "Times New Roman", Times, serif; }
 
-body {
-  font-family: "Times New Roman", Times, serif;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero-vignette {
   background: radial-gradient(
     ellipse at center,
@@ -41,28 +36,19 @@ body {
     rgba(0,0,0,0.65) 100%
   );
 }
-
-/* Soft grain overlay */
 .grain {
   pointer-events: none;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   opacity: 0.04;
 }
-
-/* Hero text reveal */
 .hero-title {
   opacity: 0;
   letter-spacing: 0.03em;
   animation: luxuryReveal 1.6s ease-out forwards;
 }
 @keyframes luxuryReveal {
-  to {
-    opacity: 1;
-    letter-spacing: 0.18em;
-  }
+  to { opacity: 1; letter-spacing: 0.18em; }
 }
-
-/* Video clarity enhancement */
 .hero-video {
   animation: slowZoom 18s ease-in-out infinite alternate;
   filter: brightness(1.15) contrast(1.15) saturate(1.1);
@@ -72,7 +58,7 @@ body {
   to { transform: scale(1.08); }
 }
 
-/* Section fade-in */
+/* FADE */
 .fade-section {
   opacity: 0;
   transform: translateY(24px);
@@ -83,10 +69,8 @@ body {
   transform: translateY(0);
 }
 
-/* Product Image Slider */
-.product-slider {
-  position: relative;
-}
+/* PRODUCT SLIDER */
+.product-slider { position: relative; }
 .product-slider img {
   width: 100%;
   max-height: 360px;
@@ -97,36 +81,28 @@ body {
 
 <body class="bg-matte text-white overflow-x-hidden">
 
-<!-- ================= NAV ================= -->
+<!-- NAV -->
 <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
-    <div class="uppercase tracking-widest text-lg">
-      Ravishing Soul
-    </div>
-
+    <div class="uppercase tracking-widest text-lg">Ravishing Soul</div>
     <div class="hidden md:flex gap-12 uppercase text-xs tracking-widest text-white/80">
-      <a href="#collection" class="hover:text-white transition">Collection</a>
-      <a href="#philosophy" class="hover:text-white transition">Philosophy</a>
+      <a href="#collection">Collection</a>
+      <a href="#philosophy">Philosophy</a>
     </div>
-
     <i class="fa-solid fa-bag-shopping text-white/80"></i>
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
-
   <video autoplay muted loop playsinline
     class="absolute inset-0 w-full h-full object-cover hero-video">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
-
   <div class="absolute inset-0 hero-vignette"></div>
   <div class="absolute inset-0 grain"></div>
 
   <div class="relative z-10 text-center px-6">
-    <!-- BRAND NAME WITH ™ -->
     <h1 id="heroTitle"
         class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 inline-flex items-start">
       Ravishing Soul
@@ -139,21 +115,22 @@ body {
 
     <a href="https://wa.me/917396491027"
        target="_blank"
-       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-white">
        Private Order via WhatsApp
     </a>
   </div>
 </section>
 
-<!-- ================= COLLECTION ================= -->
+<!-- COLLECTION -->
 <section id="collection" class="max-w-7xl mx-auto px-6 py-32 fade-section">
 <h2 class="uppercase tracking-widest mb-16 text-lg">The Collection</h2>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
 
+<!-- TEMPLATE PRODUCT -->
 <!-- 1. Wanted -->
 <div>
-<div class="product-slider mb-6">
+<div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg">
   <img src="images/wanted/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.01 — Wanted</h3>
@@ -163,17 +140,16 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
-
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Wanted%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
 
 <!-- 2. Opium -->
 <div>
-<div class="product-slider mb-6">
+<div class="product-slider mb-6" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg">
   <img src="images/opium/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.02 — Opium</h3>
@@ -183,17 +159,16 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
-
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Opium%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
 
 <!-- 3. Pretty -->
 <div>
-<div class="product-slider mb-6">
+<div class="product-slider mb-6" data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg">
   <img src="images/pretty/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.03 — Pretty</h3>
@@ -203,17 +178,16 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
-
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Pretty%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
 
 <!-- 4. Aven -->
 <div>
-<div class="product-slider mb-6">
+<div class="product-slider mb-6" data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg">
   <img src="images/aven/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.04 — Aven</h3>
@@ -223,17 +197,16 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
-
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Aven%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
 
 <!-- 5. Lucky -->
 <div>
-<div class="product-slider mb-6">
+<div class="product-slider mb-6" data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg">
   <img src="images/lucky/1.jpg">
 </div>
 <h3 class="uppercase tracking-widest">No.05 — Lucky</h3>
@@ -243,10 +216,9 @@ body {
   <span class="text-white font-semibold">₹599</span>
   <span class="ml-2 text-[#25D366]">54% OFF</span>
 </p>
-
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Lucky%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
@@ -254,17 +226,39 @@ body {
 </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="border-t border-white/10 py-16 text-center text-white/50 text-xs tracking-widest">
 ©️ 2026 RAVISHING SOUL — Crafted & Curated with Care
 </footer>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/917396491027"
-target="_blank"
-class="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition hover:scale-105">
+class="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-105">
 <i class="fa-brands fa-whatsapp text-3xl text-black"></i>
 </a>
+
+<!-- JS -->
+<script>
+/* Fade-in sections */
+const sections = document.querySelectorAll('.fade-section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+},{ threshold: 0.2 });
+sections.forEach(sec => observer.observe(sec));
+
+/* Auto image slider */
+document.querySelectorAll(".product-slider").forEach(slider => {
+  const img = slider.querySelector("img");
+  const images = slider.dataset.images.split(",");
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }, 2500);
+});
+</script>
 
 </body>
 </html>
