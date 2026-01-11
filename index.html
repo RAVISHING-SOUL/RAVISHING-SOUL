@@ -27,7 +27,7 @@ tailwind.config = {
 html { scroll-behavior: smooth; }
 body { font-family: "Times New Roman", Times, serif; }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero-vignette {
   background: radial-gradient(
     ellipse at center,
@@ -41,14 +41,21 @@ body { font-family: "Times New Roman", Times, serif; }
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   opacity: 0.04;
 }
+
+/* Hero title refined */
 .hero-title {
   opacity: 0;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   animation: luxuryReveal 1.6s ease-out forwards;
 }
 @keyframes luxuryReveal {
-  to { opacity: 1; letter-spacing: 0.18em; }
+  to {
+    opacity: 1;
+    letter-spacing: 0.12em;
+  }
 }
+
+/* Video clarity */
 .hero-video {
   animation: slowZoom 18s ease-in-out infinite alternate;
   filter: brightness(1.15) contrast(1.15) saturate(1.1);
@@ -58,7 +65,7 @@ body { font-family: "Times New Roman", Times, serif; }
   to { transform: scale(1.08); }
 }
 
-/* FADE */
+/* Fade sections */
 .fade-section {
   opacity: 0;
   transform: translateY(24px);
@@ -69,7 +76,7 @@ body { font-family: "Times New Roman", Times, serif; }
   transform: translateY(0);
 }
 
-/* PRODUCT SLIDER */
+/* Product slider */
 .product-slider { position: relative; }
 .product-slider img {
   width: 100%;
@@ -81,32 +88,33 @@ body { font-family: "Times New Roman", Times, serif; }
 
 <body class="bg-matte text-white overflow-x-hidden">
 
-<!-- NAV -->
+<!-- ================= NAV ================= -->
 <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
     <div class="uppercase tracking-widest text-lg">Ravishing Soul</div>
     <div class="hidden md:flex gap-12 uppercase text-xs tracking-widest text-white/80">
-      <a href="#collection">Collection</a>
-      <a href="#philosophy">Philosophy</a>
+      <a href="#collection" class="hover:text-white transition">Collection</a>
+      <a href="#philosophy" class="hover:text-white transition">Philosophy</a>
     </div>
     <i class="fa-solid fa-bag-shopping text-white/80"></i>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
   <video autoplay muted loop playsinline
     class="absolute inset-0 w-full h-full object-cover hero-video">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
+
   <div class="absolute inset-0 hero-vignette"></div>
   <div class="absolute inset-0 grain"></div>
 
   <div class="relative z-10 text-center px-6">
+    <!-- CLEAN BRAND NAME -->
     <h1 id="heroTitle"
-        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 inline-flex items-start">
+        class="hero-title text-4xl sm:text-5xl md:text-6xl uppercase mb-12 text-center">
       Ravishing Soul
-      <sup class="ml-1 text-xs relative -top-2">™</sup>
     </h1>
 
     <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
@@ -115,19 +123,18 @@ body { font-family: "Times New Roman", Times, serif; }
 
     <a href="https://wa.me/917396491027"
        target="_blank"
-       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
        Private Order via WhatsApp
     </a>
   </div>
 </section>
 
-<!-- COLLECTION -->
+<!-- ================= COLLECTION ================= -->
 <section id="collection" class="max-w-7xl mx-auto px-6 py-32 fade-section">
 <h2 class="uppercase tracking-widest mb-16 text-lg">The Collection</h2>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
 
-<!-- TEMPLATE PRODUCT -->
 <!-- 1. Wanted -->
 <div>
 <div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg">
@@ -142,7 +149,7 @@ body { font-family: "Times New Roman", Times, serif; }
 </p>
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Wanted%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
@@ -161,7 +168,7 @@ body { font-family: "Times New Roman", Times, serif; }
 </p>
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Opium%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
@@ -180,7 +187,7 @@ body { font-family: "Times New Roman", Times, serif; }
 </p>
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Pretty%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
@@ -199,7 +206,7 @@ body { font-family: "Times New Roman", Times, serif; }
 </p>
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Aven%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
@@ -218,7 +225,7 @@ body { font-family: "Times New Roman", Times, serif; }
 </p>
 <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Lucky%20-%20https://ravishing-soul.github.io/#collection"
    target="_blank"
-   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+   class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
    <i class="fa-solid fa-cart-shopping"></i> Order Now
 </a>
 </div>
@@ -226,18 +233,25 @@ body { font-family: "Times New Roman", Times, serif; }
 </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= PHILOSOPHY ================= -->
+<section id="philosophy" class="py-40 text-center px-6 fade-section">
+<blockquote class="text-3xl sm:text-4xl md:text-5xl italic leading-tight">
+  “Scent is memory made visible.”
+</blockquote>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer class="border-t border-white/10 py-16 text-center text-white/50 text-xs tracking-widest">
 ©️ 2026 RAVISHING SOUL — Crafted & Curated with Care
 </footer>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/917396491027"
-class="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-105">
+class="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition hover:scale-105">
 <i class="fa-brands fa-whatsapp text-3xl text-black"></i>
 </a>
 
-<!-- JS -->
+<!-- ================= JS ================= -->
 <script>
 /* Fade-in sections */
 const sections = document.querySelectorAll('.fade-section');
@@ -247,6 +261,13 @@ const observer = new IntersectionObserver(entries => {
   });
 },{ threshold: 0.2 });
 sections.forEach(sec => observer.observe(sec));
+
+/* Hero text fade on scroll */
+const heroTitle = document.getElementById("heroTitle");
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+  heroTitle.style.opacity = Math.max(0, 1 - y / 300);
+});
 
 /* Auto image slider */
 document.querySelectorAll(".product-slider").forEach(slider => {
