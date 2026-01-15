@@ -120,6 +120,19 @@ body { font-family: "Times New Roman", Times, serif; }
     of confidence and modern luxury.
   </p>
 
+  <!-- SPECIAL LIVE SUPPORT MESSAGE -->
+  <div class="max-w-2xl mx-auto mb-10 px-6 py-5 border border-white/20 rounded-lg bg-white/5">
+    <p class="uppercase tracking-widest text-xs text-white/60 mb-2">
+      Personal Fragrance Assistance
+    </p>
+    <p class="text-white/90 text-sm leading-relaxed">
+      Dear <span class="font-semibold">Ravishing Soul</span> customer, our team is
+      <span class="text-[#25D366] font-semibold">live now</span> to personally guide you in
+      choosing the perfect fragrance. We can suggest the best scent for you based on your taste.
+      Please place your order on WhatsApp for direct assistance.
+    </p>
+  </div>
+
   <!-- WHATSAPP ORDER -->
   <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Wanted"
      target="_blank"
@@ -169,7 +182,7 @@ function updateImage() {
   });
 }
 
-/* ================= SWIPE SUPPORT ================= */
+/* Swipe support */
 slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
@@ -180,10 +193,8 @@ slider.addEventListener("touchend", (e) => {
 
   if (Math.abs(diff) > 50) {
     if (diff > 0) {
-      // Swipe Left → Next
       currentIndex = (currentIndex + 1) % images.length;
     } else {
-      // Swipe Right → Previous
       currentIndex = (currentIndex - 1 + images.length) % images.length;
     }
     updateImage();
