@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RAVISHING SOUL — Luxury Fragrances</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        matte: '#0A0A0A',
+        orderblue: '#7dd3fc'
+      }
+    }
+  }
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: "Times New Roman", Times, serif; }
+</style>
+</head>
+
+<body class="bg-matte text-white overflow-x-hidden">
+
+<!-- ================= NAV ================= -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+    <div class="uppercase tracking-widest text-lg">Ravishing Soul</div>
+    <div class="hidden md:flex gap-12 uppercase text-xs tracking-widest text-white/80">
+      <a href="#collection" class="hover:text-white transition">Collection</a>
+    </div>
+    <i class="fa-solid fa-bag-shopping text-white/80"></i>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-[100svh]">
+    <h1 class="text-5xl uppercase tracking-widest mb-8">Ravishing Soul</h1>
+    <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
+      An olfactory expression of modern elegance
+    </p>
+    <a href="https://wa.me/917396491027"
+       target="_blank"
+       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+       Private Order via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ================= COLLECTION ================= -->
+<section id="collection" class="max-w-7xl mx-auto px-6 py-32">
+<h2 class="uppercase tracking-widest mb-16 text-lg">The Collection</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+
+<!-- 1. Wanted -->
+<div>
+  <img src="images/wanted/1.jpg" class="mb-4 max-h-64 mx-auto object-contain">
+  <h3 class="uppercase tracking-widest">No.01 — Wanted</h3>
+  <p class="text-white/60 mt-2 text-sm">Leather · Smoke · Spice</p>
+  <p class="mt-3 text-sm tracking-widest">
+    <span class="line-through text-white/40 mr-2">₹1299</span>
+    <span class="text-white font-semibold">₹599</span>
+    <span class="ml-2 text-[#25D366]">54% OFF</span>
+  </p>
+  <a href="wanted.html"
+     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+     <i class="fa-solid fa-cart-shopping"></i> View Product
+  </a>
+</div>
+
+<!-- 2. Opium -->
+<div>
+  <img src="images/opium/1.jpg" class="mb-4 max-h-64 mx-auto object-contain">
+  <h3 class="uppercase tracking-widest">No.02 — Opium</h3>
+  <p class="text-white/60 mt-2 text-sm">Spice · Amber · Dark Woods</p>
+  <p class="mt-3 text-sm tracking-widest">
+    <span class="line-through text-white/40 mr-2">₹1299</span>
+    <span class="text-white font-semibold">₹599</span>
+    <span class="ml-2 text-[#25D366]">54% OFF</span>
+  </p>
+  <a href="opium.html"
+     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+     <i class="fa-solid fa-cart-shopping"></i> View Product
+  </a>
+</div>
+
+<!-- 3. Pretty -->
+<div>
+  <img src="images/pretty/1.jpg" class="mb-4 max-h-64 mx-auto object-contain">
+  <h3 class="uppercase tracking-widest">No.03 — Pretty</h3>
+  <p class="text-white/60 mt-2 text-sm">Floral · Soft Musk · Vanilla</p>
+  <p class="mt-3 text-sm tracking-widest">
+    <span class="line-through text-white/40 mr-2">₹1299</span>
+    <span class="text-white font-semibold">₹599</span>
+    <span class="ml-2 text-[#25D366]">54% OFF</span>
+  </p>
+  <a href="pretty.html"
+     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+     <i class="fa-solid fa-cart-shopping"></i> View Product
+  </a>
+</div>
+
+<!-- 4. Aven -->
+<div>
+  <img src="images/aven/1.jpg" class="mb-4 max-h-64 mx-auto object-contain">
+  <h3 class="uppercase tracking-widest">No.04 — Aven</h3>
+  <p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
+  <p class="mt-3 text-sm tracking-widest">
+    <span class="line-through text-white/40 mr-2">₹1299</span>
+    <span class="text-white font-semibold">₹599</span>
+    <span class="ml-2 text-[#25D366]">54% OFF</span>
+  </p>
+  <a href="aven.html"
+     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+     <i class="fa-solid fa-cart-shopping"></i> View Product
+  </a>
+</div>
+
+<!-- 5. Lucky -->
+<div>
+  <img src="images/lucky/1.jpg" class="mb-4 max-h-64 mx-auto object-contain">
+  <h3 class="uppercase tracking-widest">No.05 — Lucky</h3>
+  <p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
+  <p class="mt-3 text-sm tracking-widest">
+    <span class="line-through text-white/40 mr-2">₹1299</span>
+    <span class="text-white font-semibold">₹599</span>
+    <span class="ml-2 text-[#25D366]">54% OFF</span>
+  </p>
+  <a href="lucky.html"
+     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
+     <i class="fa-solid fa-cart-shopping"></i> View Product
+  </a>
+</div>
+
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-white/10 py-16 text-center text-white/50 text-xs tracking-widest">
+©️ 2026 RAVISHING SOUL — Crafted & Curated with Care
+</footer>
+
+</body>
+</html>
