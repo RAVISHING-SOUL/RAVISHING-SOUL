@@ -41,9 +41,6 @@ body { font-family: "Times New Roman", Times, serif; }
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   opacity: 0.04;
 }
-.hero-video {
-  filter: brightness(1.05) contrast(1.1) saturate(1.1);
-}
 
 /* ================= PRODUCT SLIDER ================= */
 .product-slider { 
@@ -52,24 +49,16 @@ body { font-family: "Times New Roman", Times, serif; }
   height: 360px;
   touch-action: pan-y;
 }
-
-/* Main image */
 .product-slider img.main-img {
-  position: relative;
   width: 100%;
   height: 100%;
   object-fit: contain;
   transition: transform 0.4s ease, opacity 0.4s ease;
-  z-index: 2;
 }
-
-/* Zoom */
 .product-slider img.zoomable:hover {
   transform: scale(1.12);
   cursor: pointer;
 }
-
-/* Side previews */
 .product-slider img.preview {
   position: absolute;
   top: 50%;
@@ -78,13 +67,11 @@ body { font-family: "Times New Roman", Times, serif; }
   height: 80%;
   object-fit: contain;
   opacity: 0.35;
-  z-index: 1;
   pointer-events: none;
 }
 .product-slider img.preview.left { left: -20%; }
 .product-slider img.preview.right { right: -20%; }
 
-/* Buttons */
 .prev-btn, .next-btn {
   position: absolute;
   top: 50%;
@@ -97,19 +84,12 @@ body { font-family: "Times New Roman", Times, serif; }
   cursor: pointer;
   z-index: 5;
   border-radius: 4px;
-  transition: background 0.3s;
 }
-.prev-btn:hover, .next-btn:hover { background: rgba(0,0,0,0.8); }
 .prev-btn { left: 8px; }
 .next-btn { right: 8px; }
 
-/* Mobile */
 @media (max-width: 640px) {
   .product-slider { height: 280px; }
-  .prev-btn, .next-btn {
-    padding: 12px 16px;
-    font-size: 20px;
-  }
 }
 </style>
 </head>
@@ -123,40 +103,51 @@ body { font-family: "Times New Roman", Times, serif; }
     <div class="hidden md:flex gap-12 uppercase text-xs tracking-widest text-white/80">
       <a href="#collection" class="hover:text-white transition">Collection</a>
     </div>
-    <i class="fa-solid fa-bag-shopping text-white/80"></i>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
 
-  <!-- BACKGROUND VIDEO -->
+  <!-- VIDEO BACKGROUND -->
   <video autoplay muted loop playsinline
-    class="absolute inset-0 w-full h-full object-cover hero-video">
+    class="absolute inset-0 w-full h-full object-cover">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
 
-  <!-- Overlays -->
   <div class="absolute inset-0 hero-vignette"></div>
   <div class="absolute inset-0 grain"></div>
 
   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-[100svh]">
 
-    <!-- BRAND TITLE -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl uppercase leading-[1.1] text-center mb-12 tracking-widest">
+    <!-- BRAND -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl uppercase leading-[1.1] text-center mb-10 tracking-widest">
       <span class="block">RAVISHING</span>
       <span class="block">SOUL</span>
     </h1>
 
-    <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
-      An olfactory expression of modern elegance
-    </p>
+    <!-- PERSONAL ASSISTANCE BOX -->
+    <div class="max-w-xl border border-white/20 rounded-lg p-6 md:p-8 mb-10 bg-black/40 backdrop-blur-sm">
 
-    <a href="https://wa.me/917396491027"
-       target="_blank"
-       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-12 py-4 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-       Private Order via WhatsApp
-    </a>
+      <h3 class="uppercase tracking-widest text-sm mb-4 text-white/90">
+        Personal Fragrance Assistance
+      </h3>
+
+      <p class="text-white/70 text-sm leading-relaxed mb-6">
+        <span class="text-white font-semibold">Dear Ravishing Soul customer,</span> our team is 
+        <span class="text-[#25D366] font-semibold">live now</span> to personally guide you in choosing the perfect fragrance.
+        We can suggest the best scent for you based on your taste.  
+        Please place your order on WhatsApp for direct assistance.
+      </p>
+
+      <a href="https://wa.me/917396491027"
+         target="_blank"
+         class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-black px-10 py-3 text-xs font-semibold tracking-widest uppercase transition hover:bg-white w-full">
+         <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+      </a>
+
+    </div>
+
   </div>
 </section>
 
@@ -166,10 +157,9 @@ body { font-family: "Times New Roman", Times, serif; }
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
 
-<!-- ================= 1. WANTED ================= -->
+<!-- WANTED -->
 <div>
-  <div class="product-slider mb-6" 
-       data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg,images/wanted/6.jpg">
+  <div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg,images/wanted/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/wanted/6.jpg">
     <a href="wanted.html">
@@ -178,26 +168,13 @@ body { font-family: "Times New Roman", Times, serif; }
     <img class="preview right" src="images/wanted/2.jpg">
     <button class="next-btn">❯</button>
   </div>
-
   <h3 class="uppercase tracking-widest">No.01 — Wanted</h3>
   <p class="text-white/60 mt-2 text-sm">Leather · Smoke · Spice</p>
-
-  <p class="mt-3 text-sm tracking-widest">
-    <span class="line-through text-white/40 mr-2">₹1299</span>
-    <span class="text-white font-semibold">₹599</span>
-    <span class="ml-2 text-[#25D366]">54% OFF</span>
-  </p>
-
-  <a href="wanted.html"
-     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-     <i class="fa-solid fa-cart-shopping"></i> View Product
-  </a>
 </div>
 
-<!-- ================= 2. OPIUM ================= -->
+<!-- OPIUM -->
 <div>
-  <div class="product-slider mb-6" 
-       data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg">
+  <div class="product-slider mb-6" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/opium/6.jpg">
     <a href="opium.html">
@@ -206,26 +183,13 @@ body { font-family: "Times New Roman", Times, serif; }
     <img class="preview right" src="images/opium/2.jpg">
     <button class="next-btn">❯</button>
   </div>
-
   <h3 class="uppercase tracking-widest">No.02 — Opium</h3>
   <p class="text-white/60 mt-2 text-sm">Spice · Amber · Dark Woods</p>
-
-  <p class="mt-3 text-sm tracking-widest">
-    <span class="line-through text-white/40 mr-2">₹1299</span>
-    <span class="text-white font-semibold">₹599</span>
-    <span class="ml-2 text-[#25D366]">54% OFF</span>
-  </p>
-
-  <a href="opium.html"
-     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-     <i class="fa-solid fa-cart-shopping"></i> View Product
-  </a>
 </div>
 
-<!-- ================= 3. PRETTY ================= -->
+<!-- PRETTY -->
 <div>
-  <div class="product-slider mb-6" 
-       data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg,images/pretty/6.jpg">
+  <div class="product-slider mb-6" data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg,images/pretty/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/pretty/6.jpg">
     <a href="pretty.html">
@@ -234,76 +198,8 @@ body { font-family: "Times New Roman", Times, serif; }
     <img class="preview right" src="images/pretty/2.jpg">
     <button class="next-btn">❯</button>
   </div>
-
   <h3 class="uppercase tracking-widest">No.03 — Pretty</h3>
   <p class="text-white/60 mt-2 text-sm">Floral · Soft Musk · Vanilla</p>
-
-  <p class="mt-3 text-sm tracking-widest">
-    <span class="line-through text-white/40 mr-2">₹1299</span>
-    <span class="text-white font-semibold">₹599</span>
-    <span class="ml-2 text-[#25D366]">54% OFF</span>
-  </p>
-
-  <a href="pretty.html"
-     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-     <i class="fa-solid fa-cart-shopping"></i> View Product
-  </a>
-</div>
-
-<!-- ================= 4. AVEN ================= -->
-<div>
-  <div class="product-slider mb-6" 
-       data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg,images/aven/6.jpg">
-    <button class="prev-btn">❮</button>
-    <img class="preview left" src="images/aven/6.jpg">
-    <a href="aven.html">
-      <img src="images/aven/1.jpg" class="main-img zoomable">
-    </a>
-    <img class="preview right" src="images/aven/2.jpg">
-    <button class="next-btn">❯</button>
-  </div>
-
-  <h3 class="uppercase tracking-widest">No.04 — Aven</h3>
-  <p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
-
-  <p class="mt-3 text-sm tracking-widest">
-    <span class="line-through text-white/40 mr-2">₹1299</span>
-    <span class="text-white font-semibold">₹599</span>
-    <span class="ml-2 text-[#25D366]">54% OFF</span>
-  </p>
-
-  <a href="aven.html"
-     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-     <i class="fa-solid fa-cart-shopping"></i> View Product
-  </a>
-</div>
-
-<!-- ================= 5. LUCKY ================= -->
-<div>
-  <div class="product-slider mb-6" 
-       data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg,images/lucky/6.jpg">
-    <button class="prev-btn">❮</button>
-    <img class="preview left" src="images/lucky/6.jpg">
-    <a href="lucky.html">
-      <img src="images/lucky/1.jpg" class="main-img zoomable">
-    </a>
-    <img class="preview right" src="images/lucky/2.jpg">
-    <button class="next-btn">❯</button>
-  </div>
-
-  <h3 class="uppercase tracking-widest">No.05 — Lucky</h3>
-  <p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
-
-  <p class="mt-3 text-sm tracking-widest">
-    <span class="line-through text-white/40 mr-2">₹1299</span>
-    <span class="text-white font-semibold">₹599</span>
-    <span class="ml-2 text-[#25D366]">54% OFF</span>
-  </p>
-
-  <a href="lucky.html"
-     class="inline-flex items-center gap-2 mt-4 bg-orderblue text-black px-6 py-2 text-xs font-semibold tracking-widest uppercase transition hover:bg-white">
-     <i class="fa-solid fa-cart-shopping"></i> View Product
-  </a>
 </div>
 
 </div>
@@ -339,37 +235,18 @@ document.querySelectorAll(".product-slider").forEach(slider => {
     }, 150);
   }
 
-  function nextImage() {
-    index = (index + 1) % images.length;
-    updateImages();
-  }
+  function nextImage() { index = (index + 1) % images.length; updateImages(); }
+  function prevImage() { index = (index - 1 + images.length) % images.length; updateImages(); }
 
-  function prevImage() {
-    index = (index - 1 + images.length) % images.length;
-    updateImages();
-  }
+  prevBtn.addEventListener("click", prevImage);
+  nextBtn.addEventListener("click", nextImage);
 
-  prevBtn.addEventListener("click", () => { prevImage(); resetAuto(); });
-  nextBtn.addEventListener("click", () => { nextImage(); resetAuto(); });
-
-  /* AUTO SLIDE EVERY 1.5 SECONDS */
   let auto = setInterval(nextImage, 1500);
-  function resetAuto() {
-    clearInterval(auto);
-    auto = setInterval(nextImage, 1500);
-  }
 
-  /* SWIPE SUPPORT */
-  slider.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
+  slider.addEventListener("touchstart", e => startX = e.touches[0].clientX);
   slider.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-    if (Math.abs(diff) > 50) {
-      diff > 0 ? nextImage() : prevImage();
-      resetAuto();
-    }
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextImage() : prevImage();
   });
 
   updateImages();
