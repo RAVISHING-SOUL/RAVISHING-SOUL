@@ -4,48 +4,93 @@
 <meta charset="UTF-8">
 <title>Opium — Ravishing Soul</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+body { font-family: "Times New Roman", Times, serif; }
+.product-slider { max-width: 720px; margin: 0 auto 32px; }
+.product-slider img.main-img { width: 100%; height: 440px; object-fit: contain; transition: opacity .4s; }
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.35); cursor: pointer; }
+.dots span.active { background: white; transform: scale(1.2); }
+@media (max-width:640px){ .product-slider img.main-img{height:300px;} }
+</style>
 </head>
 
-<body class="bg-black text-white font-[Times_New_Roman]">
+<body class="bg-black text-white">
 
-<header class="border-b border-white/10 py-6 px-6">
-  <a href="index.html" class="text-white/60 text-sm uppercase">← Back to Collection</a>
-</header>
-
-<section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16">
-  <img src="images/opium/1.jpg" class="max-h-[480px] mx-auto object-contain">
-
-  <div>
-    <h1 class="uppercase tracking-widest text-3xl mb-2">No.02 — Opium</h1>
-    <p class="text-white/60 mb-6">Spice · Amber · Dark Woods</p>
-
-    <p class="mb-6 text-sm tracking-widest">
-      <span class="line-through text-white/40 mr-2">₹1299</span>
-      <span class="text-2xl font-semibold">₹599</span>
-      <span class="ml-2 text-[#25D366]">54% OFF</span>
-    </p>
-
-    <p class="text-white/70 mb-6">
-      <strong>Opium</strong> is deep, seductive, and intense. Warm spices blend with rich amber
-      and dark woods to create a mysterious and luxurious fragrance.
-    </p>
-
-    <p class="text-white/70 mb-10">
-      Designed for night wear, it leaves a powerful impression of elegance and desire.
-    </p>
-
-    <a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Opium"
-       class="inline-flex items-center gap-3 bg-[#25D366] text-black px-8 py-4 text-xs uppercase tracking-widest">
-       <i class="fa-solid fa-cart-shopping"></i> Order via WhatsApp
-    </a>
+<nav class="border-b border-white/10 py-6">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between">
+    <a href="index.html" class="uppercase tracking-widest text-lg">Ravishing Soul</a>
+    <a href="index.html#collection" class="uppercase text-xs tracking-widest text-white/70">Back</a>
   </div>
+</nav>
+
+<section class="max-w-5xl mx-auto px-6 py-20 text-center">
+
+<div class="product-slider" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg">
+  <img src="images/opium/1.jpg" class="main-img" id="mainImage">
+  <div class="dots" id="dotsContainer"></div>
+</div>
+
+<h1 class="uppercase tracking-widest text-2xl mb-2">No.02 — Opium</h1>
+<p class="text-white/60 mb-6">Spice · Amber · Dark Woods</p>
+
+<p class="text-sm tracking-widest mb-6">
+  <span class="line-through text-white/40 mr-2">₹1299</span>
+  <span class="text-white font-semibold text-lg">₹599</span>
+  <span class="ml-2 text-[#25D366]">54% OFF</span>
+</p>
+
+<p class="text-white/70 max-w-2xl mx-auto mb-10">
+  A mysterious and intense fragrance blending warm spices, amber depth and dark woods
+  for an unforgettable signature.
+</p>
+
+<div class="max-w-2xl mx-auto mb-10 px-6 py-5 border border-white/20 rounded-lg bg-white/5">
+  <p class="uppercase tracking-widest text-xs text-white/60 mb-2">Personal Fragrance Assistance</p>
+  <p class="text-white/90 text-sm">
+    Dear <b>Ravishing Soul</b> customer, our team is <span class="text-[#25D366]">live now</span>
+    to help you choose the perfect fragrance. Please order on WhatsApp for personal guidance.
+  </p>
+</div>
+
+<a href="https://wa.me/917396491027?text=I%20want%20to%20order:%20Opium"
+ class="inline-flex items-center gap-3 bg-[#25D366] text-black px-10 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-white">
+ <i class="fa-solid fa-cart-shopping"></i> Order via WhatsApp
+</a>
+
 </section>
 
-<footer class="py-10 text-center text-white/50 text-xs">
-© 2026 Ravishing Soul
+<footer class="border-t border-white/10 py-12 text-center text-white/50 text-xs">
+© 2026 RAVISHING SOUL
 </footer>
+
+<script>
+const slider=document.querySelector(".product-slider");
+const mainImage=document.getElementById("mainImage");
+const dotsContainer=document.getElementById("dotsContainer");
+const images=slider.dataset.images.split(",");
+let currentIndex=0;
+
+images.forEach((_,i)=>{
+  const dot=document.createElement("span");
+  if(i===0) dot.classList.add("active");
+  dot.onclick=()=>{currentIndex=i;update();};
+  dotsContainer.appendChild(dot);
+});
+
+function update(){
+  mainImage.style.opacity="0";
+  setTimeout(()=>{
+    mainImage.src=images[currentIndex];
+    mainImage.style.opacity="1";
+  },150);
+  document.querySelectorAll(".dots span").forEach((d,i)=>d.classList.toggle("active",i===currentIndex));
+}
+</script>
 
 </body>
 </html>
