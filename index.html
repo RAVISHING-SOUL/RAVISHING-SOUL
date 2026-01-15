@@ -41,6 +41,9 @@ body { font-family: "Times New Roman", Times, serif; }
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   opacity: 0.04;
 }
+.hero-video {
+  filter: brightness(1.05) contrast(1.1) saturate(1.1);
+}
 
 /* ================= PRODUCT SLIDER ================= */
 .product-slider { 
@@ -78,7 +81,6 @@ body { font-family: "Times New Roman", Times, serif; }
   z-index: 1;
   pointer-events: none;
 }
-
 .product-slider img.preview.left { left: -20%; }
 .product-slider img.preview.right { right: -20%; }
 
@@ -127,12 +129,23 @@ body { font-family: "Times New Roman", Times, serif; }
 
 <!-- ================= HERO ================= -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
+
+  <!-- BACKGROUND VIDEO -->
+  <video autoplay muted loop playsinline
+    class="absolute inset-0 w-full h-full object-cover hero-video">
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlays -->
   <div class="absolute inset-0 hero-vignette"></div>
   <div class="absolute inset-0 grain"></div>
 
   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 min-h-[100svh]">
+
+    <!-- BRAND TITLE -->
     <h1 class="text-4xl sm:text-5xl md:text-6xl uppercase leading-[1.1] text-center mb-12 tracking-widest">
-      Ravishing Soul
+      <span class="block">RAVISHING</span>
+      <span class="block">SOUL</span>
     </h1>
 
     <p class="uppercase tracking-widest text-xs text-white/70 mb-10">
@@ -156,8 +169,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 1. WANTED ================= -->
 <div>
   <div class="product-slider mb-6" 
-       data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg,images/wanted/6.jpg"
-       data-link="wanted.html">
+       data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg,images/wanted/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/wanted/6.jpg">
     <a href="wanted.html">
@@ -185,8 +197,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 2. OPIUM ================= -->
 <div>
   <div class="product-slider mb-6" 
-       data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg"
-       data-link="opium.html">
+       data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/opium/6.jpg">
     <a href="opium.html">
@@ -214,8 +225,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 3. PRETTY ================= -->
 <div>
   <div class="product-slider mb-6" 
-       data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg,images/pretty/6.jpg"
-       data-link="pretty.html">
+       data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg,images/pretty/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/pretty/6.jpg">
     <a href="pretty.html">
@@ -243,8 +253,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 4. AVEN ================= -->
 <div>
   <div class="product-slider mb-6" 
-       data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg,images/aven/6.jpg"
-       data-link="aven.html">
+       data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg,images/aven/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/aven/6.jpg">
     <a href="aven.html">
@@ -272,8 +281,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 5. LUCKY ================= -->
 <div>
   <div class="product-slider mb-6" 
-       data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg,images/lucky/6.jpg"
-       data-link="lucky.html">
+       data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg,images/lucky/6.jpg">
     <button class="prev-btn">❮</button>
     <img class="preview left" src="images/lucky/6.jpg">
     <a href="lucky.html">
@@ -341,12 +349,11 @@ document.querySelectorAll(".product-slider").forEach(slider => {
     updateImages();
   }
 
-  nextBtn.addEventListener("click", () => { nextImage(); resetAuto(); });
   prevBtn.addEventListener("click", () => { prevImage(); resetAuto(); });
+  nextBtn.addEventListener("click", () => { nextImage(); resetAuto(); });
 
   /* AUTO SLIDE EVERY 1.5 SECONDS */
   let auto = setInterval(nextImage, 1500);
-
   function resetAuto() {
     clearInterval(auto);
     auto = setInterval(nextImage, 1500);
@@ -356,7 +363,6 @@ document.querySelectorAll(".product-slider").forEach(slider => {
   slider.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
-
   slider.addEventListener("touchend", e => {
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
