@@ -49,16 +49,19 @@ body { font-family: "Times New Roman", Times, serif; }
   height: 360px;
   touch-action: pan-y;
 }
+
 .product-slider img.main-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease;
 }
+
 .product-slider img.zoomable:hover {
   transform: scale(1.12);
   cursor: pointer;
 }
+
 .product-slider img.preview {
   position: absolute;
   top: 50%;
@@ -66,31 +69,20 @@ body { font-family: "Times New Roman", Times, serif; }
   width: 45%;
   height: 80%;
   object-fit: contain;
-  opacity: 0.35;
   pointer-events: none;
 }
+
 .product-slider img.preview.left { left: -20%; }
 .product-slider img.preview.right { right: -20%; }
 
-/* Buttons */
-.prev-btn, .next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 5;
-  border-radius: 4px;
-}
-.prev-btn { left: 8px; }
-.next-btn { right: 8px; }
-
 @media (max-width: 640px) {
   .product-slider { height: 280px; }
+}
+
+/* ================= TAGLINE ================= */
+.tagline-text {
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.04em;
 }
 </style>
 </head>
@@ -157,13 +149,11 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 1. WANTED ================= -->
 <div>
   <div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg,images/wanted/6.jpg">
-    <button class="prev-btn">❮</button>
     <img class="preview left" src="images/wanted/6.jpg">
     <a href="wanted.html">
       <img src="images/wanted/1.jpg" class="main-img zoomable">
     </a>
     <img class="preview right" src="images/wanted/2.jpg">
-    <button class="next-btn">❯</button>
   </div>
   <h3 class="uppercase tracking-widest">No.01 — Wanted</h3>
   <p class="text-white/60 mt-2 text-sm">Leather · Smoke · Spice</p>
@@ -181,13 +171,11 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 2. OPIUM ================= -->
 <div>
   <div class="product-slider mb-6" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg">
-    <button class="prev-btn">❮</button>
     <img class="preview left" src="images/opium/6.jpg">
     <a href="opium.html">
       <img src="images/opium/1.jpg" class="main-img zoomable">
     </a>
     <img class="preview right" src="images/opium/2.jpg">
-    <button class="next-btn">❯</button>
   </div>
   <h3 class="uppercase tracking-widest">No.02 — Opium</h3>
   <p class="text-white/60 mt-2 text-sm">Spice · Amber · Dark Woods</p>
@@ -205,13 +193,11 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 3. PRETTY ================= -->
 <div>
   <div class="product-slider mb-6" data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg,images/pretty/6.jpg">
-    <button class="prev-btn">❮</button>
     <img class="preview left" src="images/pretty/6.jpg">
     <a href="pretty.html">
       <img src="images/pretty/1.jpg" class="main-img zoomable">
     </a>
     <img class="preview right" src="images/pretty/2.jpg">
-    <button class="next-btn">❯</button>
   </div>
   <h3 class="uppercase tracking-widest">No.03 — Pretty</h3>
   <p class="text-white/60 mt-2 text-sm">Floral · Soft Musk · Vanilla</p>
@@ -229,13 +215,11 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 4. AVEN ================= -->
 <div>
   <div class="product-slider mb-6" data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg,images/aven/6.jpg">
-    <button class="prev-btn">❮</button>
     <img class="preview left" src="images/aven/6.jpg">
     <a href="aven.html">
       <img src="images/aven/1.jpg" class="main-img zoomable">
     </a>
     <img class="preview right" src="images/aven/2.jpg">
-    <button class="next-btn">❯</button>
   </div>
   <h3 class="uppercase tracking-widest">No.04 — Aven</h3>
   <p class="text-white/60 mt-2 text-sm">Green · Fresh · Mineral</p>
@@ -253,13 +237,11 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= 5. LUCKY ================= -->
 <div>
   <div class="product-slider mb-6" data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg,images/lucky/6.jpg">
-    <button class="prev-btn">❮</button>
     <img class="preview left" src="images/lucky/6.jpg">
     <a href="lucky.html">
       <img src="images/lucky/1.jpg" class="main-img zoomable">
     </a>
     <img class="preview right" src="images/lucky/2.jpg">
-    <button class="next-btn">❯</button>
   </div>
   <h3 class="uppercase tracking-widest">No.05 — Lucky</h3>
   <p class="text-white/60 mt-2 text-sm">Citrus · Woods · Amber</p>
@@ -277,6 +259,13 @@ body { font-family: "Times New Roman", Times, serif; }
 </div>
 </section>
 
+<!-- ================= TAGLINE SCREEN ================= -->
+<section class="min-h-[70vh] flex items-center justify-center text-center px-6 bg-black">
+  <p class="tagline-text max-w-3xl text-2xl sm:text-3xl md:text-4xl italic font-light text-white/90 leading-relaxed">
+    “Scent is memory made visible.”
+  </p>
+</section>
+
 <!-- ================= FOOTER ================= -->
 <footer class="border-t border-white/10 py-16 text-center text-white/50 text-xs tracking-widest">
 © 2026 RAVISHING SOUL — Crafted & Curated with Care
@@ -289,35 +278,47 @@ document.querySelectorAll(".product-slider").forEach(slider => {
   const prevPreview = slider.querySelector(".preview.left");
   const nextPreview = slider.querySelector(".preview.right");
   const images = slider.dataset.images.split(",");
-  const prevBtn = slider.querySelector(".prev-btn");
-  const nextBtn = slider.querySelector(".next-btn");
 
   let index = 0;
+  let startX = 0;
 
   function updateImages() {
     const prevIndex = (index - 1 + images.length) % images.length;
     const nextIndex = (index + 1) % images.length;
-    mainImg.style.opacity = "0";
-    setTimeout(() => {
-      mainImg.src = images[index];
-      prevPreview.src = images[prevIndex];
-      nextPreview.src = images[nextIndex];
-      mainImg.style.opacity = "1";
-    }, 150);
+
+    mainImg.src = images[index];
+    prevPreview.src = images[prevIndex];
+    nextPreview.src = images[nextIndex];
   }
 
-  function nextImage() { index = (index + 1) % images.length; updateImages(); }
-  function prevImage() { index = (index - 1 + images.length) % images.length; updateImages(); }
+  function nextImage() { 
+    index = (index + 1) % images.length; 
+    updateImages(); 
+  }
 
-  prevBtn.addEventListener("click", prevImage);
-  nextBtn.addEventListener("click", nextImage);
+  function prevImage() { 
+    index = (index - 1 + images.length) % images.length; 
+    updateImages(); 
+  }
 
-  /* AUTO SLIDE EVERY 1.5s */
-  setInterval(nextImage, 1500);
+  /* AUTO SLIDE */
+  let auto = setInterval(nextImage, 2000);
+
+  /* SWIPE SUPPORT */
+  slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    clearInterval(auto);
+  });
+
+  slider.addEventListener("touchend", e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextImage() : prevImage();
+    auto = setInterval(nextImage, 2000);
+  });
 
   updateImages();
 });
 </script>
 
 </body>
-  </html>
+</html>
