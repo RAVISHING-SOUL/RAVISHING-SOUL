@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RAVISHING SOUL — Luxury Fragrances</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        matte: '#0A0A0A',
+        orderblue: '#7dd3fc'
+      }
+    }
+  }
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: "Times New Roman", Times, serif; }
+
+/* HERO */
+.hero-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.45) 70%,
+    rgba(0,0,0,0.65) 100%
+  );
+}
+.grain {
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.04;
+}
+
+/* PRODUCT SLIDER */
+.product-slider { 
+  position: relative; 
+  overflow: hidden;
+  height: 360px;
+  touch-action: pan-y;
+}
+.product-slider img.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+.product-slider img.zoomable:hover {
+  transform: scale(1.12);
+  cursor: pointer;
+}
+.product-slider img.preview {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  height: 80%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+.product-slider img.preview.left { left: -20%; }
+.product-slider img.preview.right { right: -20%; }
+
+@media (max-width: 640px) {
+  .product-slider { height: 280px; }
+}
+
+/* TAGLINE */
+.tagline-text { letter-spacing: 0.04em; }
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  z-index:9999;
+  box-shadow:0 10px 25px rgba(0,0,0,.45);
+  transition:.2s;
+}
+.whatsapp-float:hover{ transform:scale(1.1); }
+</style>
+</head>
+
+<body class="bg-matte text-white overflow-x-hidden">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between">
+    <div class="uppercase tracking-widest text-lg">Ravishing Soul</div>
+    <a href="#collection" class="uppercase text-xs tracking-widest text-white/80">Collection</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 hero-vignette"></div>
+  <div class="absolute inset-0 grain"></div>
+
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl md:text-6xl uppercase mb-10 tracking-widest">
+      <span class="block">RAVISHING</span>
+      <span class="block">SOUL</span>
+    </h1>
+
+    <div class="max-w-xl border border-white/20 rounded-lg p-6 bg-black/40">
+      <h3 class="uppercase tracking-widest text-sm mb-4">Personal Fragrance Assistance</h3>
+      <p class="text-white/70 text-sm mb-6">
+        Dear customer, our team is <span class="text-[#25D366] font-semibold">live now</span>
+        to guide you personally.
+      </p>
+      <a href="https://wa.me/917396491027" target="_blank"
+         class="bg-[#25D366] text-black px-10 py-3 text-xs font-semibold tracking-widest uppercase inline-flex items-center gap-2">
+        <i class="fa-brands fa-whatsapp"></i> get best for you
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section id="collection" class="max-w-7xl mx-auto px-6 py-32">
+<h2 class="uppercase tracking-widest mb-16 text-lg">The Collection</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+
+<!-- WANTED -->
+<div>
+  <div class="product-slider mb-6" data-images="images/wanted/1.jpg,images/wanted/2.jpg,images/wanted/3.jpg,images/wanted/4.jpg,images/wanted/5.jpg,images/wanted/6.jpg">
+    <img class="preview left" src="images/wanted/6.jpg">
+    <a href="wanted.html"><img src="images/wanted/1.jpg" class="main-img zoomable"></a>
+    <img class="preview right" src="images/wanted/2.jpg">
+  </div>
+  <h3 class="uppercase tracking-widest">Wanted</h3>
+  <p class="text-white/60 text-sm">Leather · Smoke · Spice</p>
+  <p class="text-sm"><span class="line-through">₹1299</span> <b>₹599</b> <span class="text-[#25D366]">54% OFF</span></p>
+  <a href="wanted.html" class="bg-orderblue text-black px-6 py-2 text-xs inline-flex gap-2 mt-4"><i class="fa-solid fa-cart-shopping"></i> View Product</a>
+</div>
+
+<!-- OPIUM -->
+<div>
+  <div class="product-slider mb-6" data-images="images/opium/1.jpg,images/opium/2.jpg,images/opium/3.jpg,images/opium/4.jpg,images/opium/5.jpg,images/opium/6.jpg">
+    <img class="preview left" src="images/opium/6.jpg">
+    <a href="opium.html"><img src="images/opium/1.jpg" class="main-img zoomable"></a>
+    <img class="preview right" src="images/opium/2.jpg">
+  </div>
+  <h3 class="uppercase tracking-widest">Opium</h3>
+  <p class="text-white/60 text-sm">Spice · Amber · Dark Woods</p>
+  <p class="text-sm"><span class="line-through">₹1299</span> <b>₹599</b> <span class="text-[#25D366]">54% OFF</span></p>
+  <a href="opium.html" class="bg-orderblue text-black px-6 py-2 text-xs inline-flex gap-2 mt-4"><i class="fa-solid fa-cart-shopping"></i> View Product</a>
+</div>
+
+<!-- PRETTY -->
+<div>
+  <div class="product-slider mb-6" data-images="images/pretty/1.jpg,images/pretty/2.jpg,images/pretty/3.jpg,images/pretty/4.jpg,images/pretty/5.jpg,images/pretty/6.jpg">
+    <img class="preview left" src="images/pretty/6.jpg">
+    <a href="pretty.html"><img src="images/pretty/1.jpg" class="main-img zoomable"></a>
+    <img class="preview right" src="images/pretty/2.jpg">
+  </div>
+  <h3 class="uppercase tracking-widest">Pretty</h3>
+  <p class="text-white/60 text-sm">Floral · Soft Musk · Vanilla</p>
+  <p class="text-sm"><span class="line-through">₹1299</span> <b>₹599</b> <span class="text-[#25D366]">54% OFF</span></p>
+  <a href="pretty.html" class="bg-orderblue text-black px-6 py-2 text-xs inline-flex gap-2 mt-4"><i class="fa-solid fa-cart-shopping"></i> View Product</a>
+</div>
+
+<!-- AVEN -->
+<div>
+  <div class="product-slider mb-6" data-images="images/aven/1.jpg,images/aven/2.jpg,images/aven/3.jpg,images/aven/4.jpg,images/aven/5.jpg,images/aven/6.jpg">
+    <img class="preview left" src="images/aven/6.jpg">
+    <a href="aven.html"><img src="images/aven/1.jpg" class="main-img zoomable"></a>
+    <img class="preview right" src="images/aven/2.jpg">
+  </div>
+  <h3 class="uppercase tracking-widest">Aven</h3>
+  <p class="text-white/60 text-sm">Green · Fresh · Mineral</p>
+  <p class="text-sm"><span class="line-through">₹1299</span> <b>₹599</b> <span class="text-[#25D366]">54% OFF</span></p>
+  <a href="aven.html" class="bg-orderblue text-black px-6 py-2 text-xs inline-flex gap-2 mt-4"><i class="fa-solid fa-cart-shopping"></i> View Product</a>
+</div>
+
+<!-- LUCKY -->
+<div>
+  <div class="product-slider mb-6" data-images="images/lucky/1.jpg,images/lucky/2.jpg,images/lucky/3.jpg,images/lucky/4.jpg,images/lucky/5.jpg,images/lucky/6.jpg">
+    <img class="preview left" src="images/lucky/6.jpg">
+    <a href="lucky.html"><img src="images/lucky/1.jpg" class="main-img zoomable"></a>
+    <img class="preview right" src="images/lucky/2.jpg">
+  </div>
+  <h3 class="uppercase tracking-widest">Lucky</h3>
+  <p class="text-white/60 text-sm">Citrus · Woods · Amber</p>
+  <p class="text-sm"><span class="line-through">₹1299</span> <b>₹599</b> <span class="text-[#25D366]">54% OFF</span></p>
+  <a href="lucky.html" class="bg-orderblue text-black px-6 py-2 text-xs inline-flex gap-2 mt-4"><i class="fa-solid fa-cart-shopping"></i> View Product</a>
+</div>
+
+</div>
+</section>
+
+<section class="min-h-[70vh] flex items-center justify-center text-center px-6 bg-black">
+  <p class="tagline-text text-3xl italic">“Scent is memory made visible.”</p>
+</section>
+
+<footer class="border-t border-white/10 py-16 text-center text-white/50 text-xs">
+© 2026 RAVISHING SOUL — Crafted & Curated with Care
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/917396491027" target="_blank" class="whatsapp-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- SLIDER JS -->
+<script>
+document.querySelectorAll(".product-slider").forEach(slider=>{
+ const main=slider.querySelector(".main-img");
+ const l=slider.querySelector(".left");
+ const r=slider.querySelector(".right");
+ const imgs=slider.dataset.images.split(",");
+ let i=0,x=0;
+ const u=()=>{main.src=imgs[i];l.src=imgs[(i-1+imgs.length)%imgs.length];r.src=imgs[(i+1)%imgs.length];}
+ let a=setInterval(()=>{i=(i+1)%imgs.length;u();},2000);
+ slider.addEventListener("touchstart",e=>{x=e.touches[0].clientX;clearInterval(a);});
+ slider.addEventListener("touchend",e=>{
+  const d=x-e.changedTouches[0].clientX;
+  if(Math.abs(d)>50)i=d>0?(i+1)%imgs.length:(i-1+imgs.length)%imgs.length;
+  u();a=setInterval(()=>{i=(i+1)%imgs.length;u();},2000);
+ });
+ u();
+});
+</script>
+
+</body>
+</html>
