@@ -370,5 +370,19 @@ document.querySelectorAll(".product-slider").forEach(slider => {
 });
 </script>
 
+
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const collection = document.getElementById("collection");
+    if (collection) {
+      const y = collection.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }, 1000); // 1 second delay
+});
+</script>
+
+
 </body>
 </html>
