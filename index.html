@@ -20,11 +20,6 @@
 <meta property="og:image" content="https://ravishingsoul.com/images/og.jpg">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preload" as="image" href="images/wanted/1.jpg">
-<link rel="preload" as="image" href="images/opium/1.jpg">
-<link rel="preload" as="image" href="images/pretty/1.jpg">
-<link rel="preload" as="image" href="images/aven/1.jpg">
-<link rel="preload" as="image" href="images/lucky/1.jpg">
 
 
 <script type="application/ld+json">
@@ -42,7 +37,7 @@
 </script>
 
 <!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com" defer></script>
 <meta name="theme-color" content="#000000">
 
 <script>
@@ -143,7 +138,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= HERO ================= -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
 
-  <video autoplay muted loop playsinline preload="metadata"
+  <video autoplay muted loop playsinline preload="none"
     class="absolute inset-0 w-full h-full object-cover">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
@@ -361,16 +356,23 @@ document.querySelectorAll(".product-slider").forEach(slider => {
   function nextImage() { index = (index + 1) % images.length; updateImages(); }
   function prevImage() { index = (index - 1 + images.length) % images.length; updateImages(); }
 
-  let auto = null;
+ let auto = null;
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      auto = setInterval(nextImage, 2500);
+      if (!auto) {
+        auto = setInterval(nextImage, 2500);
+      }
     } else {
-      clearInterval(auto);
+      if (auto) {
+        clearInterval(auto);
+        auto = null;
+      }
     }
   });
-});
+}, { threshold: 0.6 });
+
 observer.observe(slider);
 
 
