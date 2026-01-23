@@ -37,6 +37,8 @@
 
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
+<meta name="theme-color" content="#000000">
+
 <script>
 tailwind.config = {
   theme: {
@@ -135,7 +137,7 @@ body { font-family: "Times New Roman", Times, serif; }
 <!-- ================= HERO ================= -->
 <section class="relative min-h-[100svh] flex items-center justify-center pt-32 overflow-hidden">
 
-  <video autoplay muted loop playsinline
+  <video autoplay muted loop playsinline preload="none"
     class="absolute inset-0 w-full h-full object-cover">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
@@ -353,7 +355,18 @@ document.querySelectorAll(".product-slider").forEach(slider => {
   function nextImage() { index = (index + 1) % images.length; updateImages(); }
   function prevImage() { index = (index - 1 + images.length) % images.length; updateImages(); }
 
-  let auto = setInterval(nextImage, 2000);
+  let auto = null;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      auto = setInterval(nextImage, 2500);
+    } else {
+      clearInterval(auto);
+    }
+  });
+});
+observer.observe(slider);
+
 
   slider.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
@@ -379,7 +392,7 @@ window.addEventListener("load", () => {
       const y = collection.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
-  }, 1000); // 1 second delay
+  }, 1500); // 1 second delay
 });
 </script>
 
